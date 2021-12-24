@@ -1,0 +1,26 @@
+<h1>Albums#index</h1>
+<p>Find me in app/views/albums/index.html.erb</p>
+
+<h2>Actions --></h2>
+<ul>
+  <li><%= link_to 'New Album Data Create', new_album_path %></li>
+</ul>
+
+<h2>Album Lists --></h2>
+<%# 現在の登録数を表示する。“#{}”は、Rubyの式展開 %>
+<%= "登録アルバム数 : #{@albums.count}" %>
+
+<%# @albumsでレコードが1件もない場合の分岐 %>
+<% if @albums.count == 0 %>
+  <%# @albumsにデータがない場合の表示 %>
+  <p>
+    アルバムが登録されていません
+  </p>
+<% else %>
+  <%# @albumsにレコードがある場合、タイトルを表示する %>
+  <% @albums.each do |album| %>
+    <p>
+      <%= link_to album.title, album_path(album) %>
+    </p>
+  <% end %>
+<% end %>

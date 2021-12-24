@@ -1,0 +1,11 @@
+<h1>Albums#new</h1>
+<p>Find me in app/views/albums/new.html.erb</p>
+
+<%# バリデーションメッセージの部分テンプレート %>
+<%= render 'layouts/error_messages', model: @album %>
+
+<%# フォーム部分 %>
+<%= form_with model: @album do |album| %>
+  <%# フォームのテンプレート %>
+  <% render 'form', album: album %>
+<% end %>

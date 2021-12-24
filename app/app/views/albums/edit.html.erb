@@ -1,0 +1,9 @@
+<h1>Albums#edit</h1>
+<p>Find me in app/views/albums/edit.html.erb</p>
+
+<%# バリデーションメッセージの部分テンプレート %>
+<%= render 'layouts/error_messages', model: @album %>
+
+<%= form_with model: @album do |album| %>
+  <% render 'form', album: album %>
+<% end %>
